@@ -1,0 +1,295 @@
+#content-area {
+    overflow: auto;
+    width: 100%;
+    min-height: 100vh;
+}
+
+#filter {
+    background: $grey;
+    width: 30%;
+    max-width: 300px;
+    display: inline-block;
+    float: left;
+
+    .inside {
+        padding: 20px;
+        max-width: 300px;
+    }
+    h4 {
+        font-size: 0.9rem;
+        margin-bottom: 25px;
+        font-weight: 500px;
+        text-transform: uppercase;
+    }
+    select {
+        background: transparent;
+        padding: 10px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #1b1b1b;
+        display: block;
+        margin-bottom: 25px;
+        width: 100%;
+    }
+    .filters {
+        .title {
+            font-size: 0.9rem;
+            display: block;
+            margin-bottom: 1rem;
+            color: $darkgrey;
+        }
+        input[type="text"]{
+           border-radius: 5px;
+           font-size: 1rem;
+           padding: 0.4rem;  
+           width: 45%;
+           display: inline-block;
+           margin-right: 2.5%;
+           margin-bottom: 1rem;
+        }
+        &.extras {
+            label {
+                display: block;
+                width: 100%;
+                padding: 10px 0;
+                input[type="checkbox"] {
+                    float: right;
+                }
+            }
+        }
+    }
+}
+
+#listings{
+    width: 70%;
+    float: left;
+    display: inline-block;
+    padding: 15px;
+    background: $offwhite;    
+
+    .search-area{
+        input[type="text"] {
+            width: 70%;
+            background: transparent;
+            font-size: 2rem;
+            border: none;
+            border-bottom: 1px solid $darkgrey;
+            font-weight: 100;
+            margin-bottom: 20px;
+             color: $lightgrey;
+        }
+    }
+    .sort-by-area {
+        margin-bottom: 20px;
+        .results{
+            color: $darkgrey;
+            font-size: .8rem;
+            display: inline-block;
+        }
+        .sort-options {
+            float: right;
+            select {
+                font-size: .9rem;
+                font-weight: 300;
+                border: 1px solid $lightgrey;
+                background: transparent;
+
+                display: inline-block;
+                margin-right: 15px;
+                vertical-align: top;
+            }
+            .view {
+                display: inline-block;
+               .fa {
+                 font-size: 1.5rem;
+                 margin-right: 15px;
+               }
+            }
+        }
+    }
+
+    .listings-results {
+        margin-bottom: 60px;
+        .listing {
+            background: #fff;
+            border-radius: 5px;
+            -webkit-box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+            -moz-box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+            box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+        }
+
+        .listing-img {
+            color: #fff;
+            padding: 15px;
+            position: relative;
+            background: url(https://zeltahome.com/wp-content/uploads/2019/02/06b607d2c05ccfaaf02bc918119570c4.jpg) no-repeat center center; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            min-height: 200px;
+            -webkit-border-top-left-radius: 5px;
+            -webkit-border-top-right-radius: 5px;
+            -moz-border-radius-topleft: 5px;
+            -moz-border-radius-topright: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+           
+            &:hover{
+              .details{
+                  opacity: 1;
+              }
+              .Address {
+                 opacity: 0;
+              }
+            }
+            .Address {
+                font-size: 1.3rem;
+                text-transform: capitalize;
+                position: absolute;
+                bottom: 20px;
+                opacity: 1;
+                transition: all .4s ease-in-out;
+                text-shadow: 0px 1px 4px rgba(91,91,91,1);
+            }
+
+            .details {
+                transition: all .4s ease-in-out;
+                opacity: 0;
+                padding: 30px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                -webkit-border-top-left-radius: 5px;
+                -webkit-border-top-right-radius: 5px;
+                -moz-border-radius-topleft: 5px;
+                -moz-border-radius-topright: 5px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#4f02e5+0,9d1ced+100 */
+                background: rgb(79,2,229); /* Old browsers */
+                background: -moz-linear-gradient(-45deg,  rgba(79,2,229,1) 0%, rgba(157,28,237,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(-45deg,  rgba(79,2,229,1) 0%,rgba(157,28,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(135deg,  rgba(79,2,229,1) 0%,rgba(157,28,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4f02e5', endColorstr='#9d1ced',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+                .user-img {
+                    width: 30px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 2px solid white;
+                    display: inline-block;
+                    background: url(https://zeltahome.com/wp-content/uploads/2019/02/06b607d2c05ccfaaf02bc918119570c4.jpg) no-repeat center center; 
+                   -webkit-background-size: cover;
+                   -moz-background-size: cover;
+                   -o-background-size: cover;
+                   background-size: cover;
+                }
+                .user-details {
+                    vertical-align: top;
+                    display: inline-block;
+
+                    .user-name {
+                        font-weight: 300;
+                        font-size: 0.9rem;
+                        display: block;
+                        color: rgb(247, 247, 247);
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                    }
+                    .post-date {
+                        font-size: 0.9rem;
+                        display: block;
+                        color: rgba(225,225,225, .8);
+                    }
+                }
+                .listing-details {
+                    margin-top: 20px;
+                    margin-bottom: 10px;
+
+                    .fa{
+                        display: inline-block;
+                        font-size: 20px;
+                        margin-right: 15px;
+                    }
+                    span {
+                        font-weight: 300;
+                        font-size: 0.8rem;
+                        display: inline-block;
+                        vertical-align: top;
+                        position: relative;
+                        top: 3px;
+                    }
+                    .floor-space {
+                        margin-bottom: 10px;
+                        
+                    }
+              }
+            }
+        }
+        .bottom-info {
+            padding: 20px 15px;
+            .price {
+              font-size: 1rem;
+              display: block;
+              margin-bottom: 10px;
+              color: $darkgrey;
+            }
+            .location {
+              font-size: 1.2rem;
+              display: block;
+              color: $lightgrey;
+            }
+        }
+    }
+}
+.view-btn {
+    background: black;
+    padding: 8px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    text-align: center;
+    max-width: 150px;
+    transition:  .3s ease-in-out;
+    &:hover {
+        background: $pink;
+        cursor: pointer;
+    }
+}
+
+#pagination {
+    text-align: center;
+    .pages {
+        margin: 0 auto;
+        display: inline-block;
+        background: #fff;
+        -webkit-box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+        -moz-box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+        box-shadow: 0px 9px 54px -4px rgba(224,224,224,1);
+        li{
+            padding: 20px 30px;
+            display: inline-block;
+            
+            &.active,
+            &:hover {
+                color: #fff;
+                font-weight: 700;
+                background-color: $pink;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.col-md-3 {
+    width: 25%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 15px;
+}
+.col-md-9 {
+    width: 75%;
+    display: inline-block;
+} 
