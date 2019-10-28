@@ -11,7 +11,7 @@ var listingsData = [
             'gym'
         ],
         homeType: 'Apartment',
-        image: 'https://media.equityapartments.com/images/c_crop,x_0,y_0,w_1920,h_1080/c_fill,w_1920,h_1080/q_80/4206-28/the-kelvin-apartments-exterior.jpg'
+        image: 'http://marceauimmo.staticlbi.com/original/images/biens/1/78793b99ed3060a58b833ea04b493953/21243765f7f2f834f1eda0c1a755a87d.jpg'
     },
     {
         address: '3 universal st ',
@@ -39,7 +39,7 @@ var listingsData = [
             'gym'
         ],
         homeType: 'Apartment',
-        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQLTx2JDBl9JPrU-SWb4vuBorql_1Q54nZzSx_UI26KuV59wtKaa'
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTnhLVSHtYAiiC0HT8aYWv3CK_mieAlcQphFClzwMPh8GTYEq3eg&s'
     },
     {
         address: '889 beemore st',
