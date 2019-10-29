@@ -24,7 +24,7 @@ var listingsData = [
             'elevator',
             'gym'
         ],
-        homeType: 'Apartment',
+        homeType: 'Condo',
         image: 'https://media.adinahotels.com/media/filer_public/7e/9d/7e9d0189-1230-4df8-9896-1f1d31270930/adina-melbourne-flinders-street-apartment-hotel-three-bedroom-penthouse-04-2013-450x300.jpg'
     },
     {
@@ -38,7 +38,7 @@ var listingsData = [
             'elevator',
             'gym'
         ],
-        homeType: 'Apartment',
+        homeType: 'Single Home',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTnhLVSHtYAiiC0HT8aYWv3CK_mieAlcQphFClzwMPh8GTYEq3eg&s'
     },
     {
@@ -52,7 +52,7 @@ var listingsData = [
             'elevator',
             'gym'
         ],
-        homeType: 'Apartment',
+        homeType: 'Studio',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQiTqQcgIIDOb2vwjYgfxCm7XpM6zRUvJJmGGV1j4T2WvwxJMUr'
     },
     {
@@ -80,7 +80,7 @@ var listingsData = [
             'elevator',
             'pool'
         ],
-        homeType: 'Apartment',
+        homeType: 'Multi Home',
         image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRcoCxrrI1eBtugW8brT_zXh_5PYQqbvPY9q4Pl6nyEOck_0e8m'
     },
     {
@@ -94,7 +94,7 @@ var listingsData = [
             'elevator',
             'gym'
         ],
-        homeType: 'Apartment',
+        homeType: 'Room',
         image: 'https://files.tpg.ua/files/hotels/000045536/Deluxe_King.jpg'
     },
 ]

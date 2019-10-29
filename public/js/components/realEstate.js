@@ -48,8 +48,18 @@ var Filter = function (_Component) {
                         "Filter"
                     ),
                     _react2.default.createElement(
+                        "label",
+                        { htmlFor: "city" },
+                        "City"
+                    ),
+                    _react2.default.createElement(
                         "select",
-                        { name: "neighborhood", className: "filters neighborhood", onChange: this.props.change },
+                        { name: "city", className: "filters city", onChange: this.props.change },
+                        _react2.default.createElement(
+                            "option",
+                            { value: "All" },
+                            "All"
+                        ),
                         _react2.default.createElement(
                             "option",
                             { value: "Ridgewood" },
@@ -62,8 +72,18 @@ var Filter = function (_Component) {
                         )
                     ),
                     _react2.default.createElement(
+                        "label",
+                        { htmlFor: "city" },
+                        "Home Type"
+                    ),
+                    _react2.default.createElement(
                         "select",
-                        { name: "houseType", className: "filters houseType", onChange: this.props.change },
+                        { name: "homeType", className: "filters homeType", onChange: this.props.change },
+                        _react2.default.createElement(
+                            "option",
+                            { value: "All" },
+                            "All Homes"
+                        ),
                         _react2.default.createElement(
                             "option",
                             { value: "Ranch" },
@@ -86,27 +106,37 @@ var Filter = function (_Component) {
                         )
                     ),
                     _react2.default.createElement(
+                        "label",
+                        { htmlFor: "city" },
+                        "Bedrooms"
+                    ),
+                    _react2.default.createElement(
                         "select",
                         { name: "bedrooms", className: "filters bedrooms", onChange: this.props.change },
                         _react2.default.createElement(
                             "option",
+                            { value: "0" },
+                            "0+ BR"
+                        ),
+                        _react2.default.createElement(
+                            "option",
                             { value: "1" },
-                            "1 BR"
+                            "1+ BR"
                         ),
                         _react2.default.createElement(
                             "option",
                             { value: "2" },
-                            "2 BR"
+                            "2+ BR"
                         ),
                         _react2.default.createElement(
                             "option",
                             { value: "3" },
-                            "3 BR"
+                            "3+ BR"
                         ),
                         _react2.default.createElement(
                             "option",
                             { value: "4" },
-                            "4 BR"
+                            "4+ BR"
                         )
                     ),
                     _react2.default.createElement(
@@ -322,6 +352,10 @@ var Listings = function (_Component) {
         value: function loopListings() {
             var listingsData = this.props.listingsData;
 
+
+            if (listingsData == undefined || listingsData.length == 0) {
+                return "Sorry your filter did not match any listing";
+            }
 
             return listingsData.map(function (listing, index) {
                 return _react2.default.createElement(
@@ -549,7 +583,7 @@ var listingsData = [{
     price: 24666,
     floorSpace: 1430,
     extras: ['elevator', 'gym'],
-    homeType: 'Apartment',
+    homeType: 'Condo',
     image: 'https://media.adinahotels.com/media/filer_public/7e/9d/7e9d0189-1230-4df8-9896-1f1d31270930/adina-melbourne-flinders-street-apartment-hotel-three-bedroom-penthouse-04-2013-450x300.jpg'
 }, {
     address: '1 president plaza',
@@ -559,7 +593,7 @@ var listingsData = [{
     price: 345355,
     floorSpace: 2400,
     extras: ['elevator', 'gym'],
-    homeType: 'Apartment',
+    homeType: 'Single Home',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTnhLVSHtYAiiC0HT8aYWv3CK_mieAlcQphFClzwMPh8GTYEq3eg&s'
 }, {
     address: '889 beemore st',
@@ -569,7 +603,7 @@ var listingsData = [{
     price: 80000,
     floorSpace: 1000,
     extras: ['elevator', 'gym'],
-    homeType: 'Apartment',
+    homeType: 'Studio',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQiTqQcgIIDOb2vwjYgfxCm7XpM6zRUvJJmGGV1j4T2WvwxJMUr'
 }, {
     address: '43 hollywood blvd',
@@ -589,7 +623,7 @@ var listingsData = [{
     price: 220000,
     floorSpace: 2000,
     extras: ['elevator', 'pool'],
-    homeType: 'Apartment',
+    homeType: 'Multi Home',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRcoCxrrI1eBtugW8brT_zXh_5PYQqbvPY9q4Pl6nyEOck_0e8m'
 }, {
     address: '730 gates ave',
@@ -599,7 +633,7 @@ var listingsData = [{
     price: 150000,
     floorSpace: 2000,
     extras: ['elevator', 'gym'],
-    homeType: 'Apartment',
+    homeType: 'Room',
     image: 'https://files.tpg.ua/files/hotels/000045536/Deluxe_King.jpg'
 }];
 
@@ -659,6 +693,9 @@ var App = function (_Component) {
 
     _this.state = {
       listingsData: _listingsData2.default,
+      city: 'All',
+      homeType: 'All',
+      bedrooms: '0',
       min_price: 0,
       max_price: 1000000,
       min_floor_space: 0,
@@ -666,9 +703,11 @@ var App = function (_Component) {
       elevator: false,
       finished_basement: false,
       gym: false,
-      swimming_pool: false
+      swimming_pool: false,
+      filteredData: _listingsData2.default
     };
     _this.change = _this.change.bind(_this);
+    _this.filteredData = _this.filteredData.bind(_this);
     return _this;
   }
 
@@ -681,7 +720,32 @@ var App = function (_Component) {
       var value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
 
       this.setState(_defineProperty({}, name, value), function () {
-        console, log(_this2.state);
+        _this2.filteredData();
+      });
+    }
+  }, {
+    key: 'filteredData',
+    value: function filteredData() {
+      var _this3 = this;
+
+      var newData = this.state.listingsData.filter(function (item) {
+        return item.price >= _this3.state.min_price && item.price <= _this3.state.max_price && item.floorSpace >= _this3.state.min_floor_space && item.floorSpace <= _this3.state.max_floor_space && item.rooms >= _this3.state.bedrooms;
+      });
+
+      if (this.state.city != "All") {
+        newData = newData.filter(function (item) {
+          return item.city == _this3.state.city;
+        });
+      }
+
+      if (this.state.homeType != "All") {
+        newData = newData.filter(function (item) {
+          return item.homeType == _this3.state.homeType;
+        });
+      }
+
+      this.setState({
+        filteredData: newData
       });
     }
   }, {
@@ -695,7 +759,7 @@ var App = function (_Component) {
           'section',
           { id: 'content-area' },
           _react2.default.createElement(_Filter2.default, { change: this.change, globalState: this.state }),
-          _react2.default.createElement(_Listings2.default, { listingsData: this.state.listingsData })
+          _react2.default.createElement(_Listings2.default, { listingsData: this.state.filteredData })
         )
       );
     }
