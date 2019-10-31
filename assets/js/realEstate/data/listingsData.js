@@ -45,7 +45,7 @@ var listingsData = [
         address: '889 beemore st',
         city: 'Newark',
         state: 'NJ',
-        rooms: 3,
+        rooms: 0,
         price: 80000,
         floorSpace: 1000,
         extras: [
@@ -87,7 +87,7 @@ var listingsData = [
         address: '730 gates ave',
         city: 'Springfeild',
         state: 'IN',
-        rooms: 3,
+        rooms: 1,
         price: 150000,
         floorSpace: 2000,
         extras: [
